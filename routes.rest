@@ -1,0 +1,39 @@
+### Get all connectbox entries
+GET http://localhost:9090/connectbox
+Accept: application/json
+
+
+### Get a single connectbox entry by ID
+GET http://localhost:9090/connectbox/67e6030ad24c064e98201684
+Accept: application/json
+
+### Create a new connectbox entry
+POST http://localhost:9090/connectbox
+Content-Type: application/json
+
+{
+    "firstName": "connessct",
+    "lastName": "bodsx",
+    "email": "testconsdfnect@byupatfhway.com",
+    "favoriteHobby": "Playindsfg Guitar",
+    "birthdayMonth": "Apri3l",
+    "age": "330",
+    "city": "New fYork"
+}
+
+### Update an existing connectbox entry by ID
+PUT http://localhost:9090/connectbox/67e560f7ca238dcaa63598b1
+Content-Type: application/json
+
+{
+    "firstName": "connectbox",
+    "lastName": "tester",
+    "email": "testconnect@byupathway.com",
+    "favoriteHobby": "Playing Guitar",
+    "birthdayMonth": "April",
+    "age": "30",
+    "city": "Lagos"
+}
+
+### Delete a connectbox entry by ID
+DELETE http://localhost:9090/connectbox/67e56169ca238dcaa63598b2

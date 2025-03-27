@@ -1,0 +1,37 @@
+{
+  "name": "p2-crud",
+  "version": "1.0.0",
+  "description": "Api for match maker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epicemrys/p2-crud.git"
+  },
+  "keywords": [],
+  "author": "charles ukoh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epicemrys/p2-crud/issues"
+  },
+  "homepage": "https://github.com/epicemrys/p2-crud#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "install": "^0.13.0",
+    "mongoose": "^8.13.0",
+    "npm": "^11.2.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
