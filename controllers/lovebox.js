@@ -2,7 +2,6 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    //#swagger.tags=['lovebox']
     console.log("Received request body:", req.body);
     try {
         const result = await mongodb.getDatabase().db().collection('lovebox').find();
@@ -16,7 +15,6 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    //#swagger.tags=['lovebox']
     console.log("Received request body:", req.body);
     try {
         if (!ObjectId.isValid(req.params.id)) {
@@ -43,7 +41,6 @@ const getSingle = async (req, res) => {
 };
 
 const createLovebox = async (req, res) => {
-    //#swagger.tags=['lovebox']
     try {
         console.log("Received request body:", req.body);
 
@@ -88,7 +85,6 @@ const createLovebox = async (req, res) => {
 
 
 const updateLovebox = async (req, res) => {
-    //#swagger.tags=['lovebox']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid match id to update a lovebox.');
@@ -124,7 +120,6 @@ const updateLovebox = async (req, res) => {
 };
 
 const deleteLovebox = async (req, res) => {
-    //#swagger.tags=['lovebox']
     console.log("Received request body:", req.body);
     try {
         if (!ObjectId.isValid(req.params.id)) {

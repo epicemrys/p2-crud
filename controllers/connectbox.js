@@ -2,7 +2,6 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    //#swagger.tags=['connectbox']
     try {
         const result = await mongodb.getDatabase().db().collection('connectbox').find();
         const connectbox = await result.toArray();
@@ -15,7 +14,6 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    //#swagger.tags=['connectbox']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid connectbox id to find a match.');
@@ -38,7 +36,6 @@ const getSingle = async (req, res) => {
 };
 
 const createConnectbox = async (req, res) => {
-    //#swagger.tags=['connectbox']
     try {
         const connectbox = {
             firstName: req.body.firstName,
@@ -79,7 +76,6 @@ const createConnectbox = async (req, res) => {
 };
 
 const updateConnectbox = async (req, res) => {
-    //#swagger.tags=['connectbox']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid connectbox id to update the entry.');
@@ -111,7 +107,6 @@ const updateConnectbox = async (req, res) => {
 };
 
 const deleteConnectbox = async (req, res) => {
-    //#swagger.tags=['connectbox']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid connectbox id to delete the entry.');
