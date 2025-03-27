@@ -1,13 +1,14 @@
-### Get all connectbox entries
-GET http://localhost:9090/connectbox
+### Edit url with database name
+### Get all lovebox / connectbox entries
+GET http://localhost:9090/lovebox
 Accept: application/json
 
 
-### Get a single connectbox entry by ID
+### Get a single lovebox / connectbox entry by ID
 GET http://localhost:9090/connectbox/67e6030ad24c064e98201684
 Accept: application/json
 
-### Create a new connectbox entry
+### Create a new lovebox / connectbox entry
 POST http://localhost:9090/connectbox
 Content-Type: application/json
 
@@ -21,7 +22,7 @@ Content-Type: application/json
     "city": "New fYork"
 }
 
-### Update an existing connectbox entry by ID
+### Update an existing lovebox / connectbox entry by ID
 PUT http://localhost:9090/connectbox/67e560f7ca238dcaa63598b1
 Content-Type: application/json
 
@@ -35,5 +36,5 @@ Content-Type: application/json
     "city": "Lagos"
 }
 
-### Delete a connectbox entry by ID
+### Delete a lovebox / connectbox entry by ID
 DELETE http://localhost:9090/connectbox/67e56169ca238dcaa63598b2

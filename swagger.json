@@ -9,7 +9,8 @@
   "host": "localhost:9090",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {

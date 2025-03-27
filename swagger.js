@@ -3,11 +3,11 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        titles: 'Contacts Api',
-        description: 'Contacts Api'
+        titles: 'Match Maker Api',
+        description: 'Connect and Match Api'
     },
     host: 'localhost:9090',
-    schemes: ['https', 'http']
+    schemes: ['http', 'https']
 };
 
 const outputFile = 'swagger.json';
