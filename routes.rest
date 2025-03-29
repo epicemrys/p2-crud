@@ -23,17 +23,17 @@ Content-Type: application/json
 }
 
 ### Update an existing lovebox / connectbox entry by ID
-PUT http://localhost:9090/connectbox/67e560f7ca238dcaa63598b1
+PUT http://localhost:9090/lovebox/67e61dbc4bc53aa00537dad0
 Content-Type: application/json
 
 {
-    "firstName": "connectbox",
-    "lastName": "tester",
-    "email": "testconnect@byupathway.com",
-    "favoriteHobby": "Playing Guitar",
-    "birthdayMonth": "April",
-    "age": "30",
-    "city": "Lagos"
+    "firstName": "Abraham",
+    "lastName": "Obama",
+    "email": "abrama@gmail.com",
+    "favoriteColor": "white",
+    "birthdayMonth": "july",
+    "age": "65",
+    "location": "Washington"
 }
 
 ### Delete a lovebox / connectbox entry by ID
