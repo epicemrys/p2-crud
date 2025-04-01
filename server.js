@@ -12,7 +12,7 @@ const port = process.env.PORT || 9090;
 
 app.use(express.json());
 app.use(bodyParser.json())
-app.use(session({secret: "secret", resolve: false, resave: false, saveUninitialized: true,}));
+app.use(session({secret: "secret", resolve: false, resave: false, saveUninitialized: true, store: new express-session.MemoryStore()}));
 
 app.use((req, res, next) => {
     res.setHeader('Access-control-Allow-Origin', '*');
