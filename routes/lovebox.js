@@ -3,15 +3,16 @@ const router = express.Router();
 
 const loveboxController = require('../controllers/lovebox');
 const validation = require('../middleware/validate');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', loveboxController.getAll);
 
-router.get('/:id', loveboxController.getSingle);
+router.get('/:id', isAuthenticated, loveboxController.getSingle);
 
-router.post('/', validation.saveLovebox, loveboxController.createLovebox);
+router.post('/', isAuthenticated, validation.saveLovebox, loveboxController.createLovebox);
 
-router.put('/:id', validation.saveLovebox, loveboxController.updateLovebox);
+router.put('/:id', isAuthenticated, validation.saveLovebox, loveboxController.updateLovebox);
 
-router.delete('/:id' , loveboxController.deleteLovebox);
+router.delete('/:id', isAuthenticated, loveboxController.deleteLovebox);
 
 module.exports = router;

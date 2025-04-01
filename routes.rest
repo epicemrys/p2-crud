@@ -5,7 +5,7 @@ Accept: application/json
 
 
 ### Get a single lovebox / connectbox entry by ID
-GET http://localhost:9090/connectbox/67e6030ad24c064e98201684
+GET http://localhost:9090/lovebox/67e5e50ed24c064e98201659
 Accept: application/json
 
 ### Create a new lovebox / connectbox entry
@@ -23,18 +23,18 @@ Content-Type: application/json
 }
 
 ### Update an existing lovebox / connectbox entry by ID
-PUT http://localhost:9090/lovebox/67e61dbc4bc53aa00537dad0
+PUT http://localhost:9090/lovebox/67e5e50ed24c064e98201659
 Content-Type: application/json
 
 {
-    "firstName": "Abraham",
-    "lastName": "Obama",
-    "email": "abrama@gmail.com",
-    "favoriteColor": "white",
-    "birthdayMonth": "july",
-    "age": "65",
-    "location": "Washington"
+    "firstName": "Dave",
+    "lastName": "William",
+    "email": "david@byupathway.edu",
+    "favoriteColor": "brown",
+    "birthdayMonth": "feb",
+    "age": "22",
+    "location": "Lagos"
 }
 
 ### Delete a lovebox / connectbox entry by ID
-DELETE http://localhost:9090/connectbox/67e56169ca238dcaa63598b2
+DELETE http://localhost:9090/connectbox/67e5e50ed24c064e98201659
