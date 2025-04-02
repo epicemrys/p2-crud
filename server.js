@@ -4,15 +4,27 @@ const dotenv = require("dotenv").config();
 const mongodb = require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
 const port = process.env.PORT || 9090;
 const app = express();
 
-//app.use(express.json());
 app.use(bodyParser.json())
-app.use(session({ secret: "secret", resolve: false, resave: false, saveUninitialized: true, }));
+app.use(session({
+    secret: process.env.SESSION_SECRET || "secret", // Use an environment variable for secrets
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URL, // Use your MongoDB connection string from .env
+        collectionName: 'sessions' // Optional: specify the collection name to store sessions
+    }),
+    cookie: {
+        secure: false, // Set to true if using HTTPS (use if deploying)
+        maxAge: 14 * 24 * 60 * 60 * 1000 // 14 days
+    }
+}));
 
 
 app.use(passport.initialize())
@@ -33,11 +45,6 @@ app.use(cors({
 }));
 
 app.use('/', require('./routes/index.js'));
-
-
-// process.on('uncaughtException', (err, origin) => {
-//     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
-// });
 
 
 passport.use(new GitHubStrategy({
