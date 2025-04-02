@@ -12,7 +12,7 @@ const app = express();
 
 //app.use(express.json());
 app.use(bodyParser.json())
-app.use(session({ secret: "secret", resolve: false, resave: false, saveUninitialized: true, store: new express - session.MemoryStore() }));
+app.use(session({ secret: "secret", resolve: false, resave: false, saveUninitialized: true, }));
 
 
 app.use(passport.initialize())
