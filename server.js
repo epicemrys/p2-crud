@@ -13,16 +13,16 @@ const app = express();
 
 app.use(bodyParser.json())
 app.use(session({
-    secret: process.env.SESSION_SECRET || "secret", // Use an environment variable for secrets
+    secret: process.env.SESSION_SECRET || "secret",
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URL, // Use your MongoDB connection string from .env
-        collectionName: 'sessions' // Optional: specify the collection name to store sessions
+        mongoUrl: process.env.MONGODB_URL,
+        collectionName: 'sessions'
     }),
     cookie: {
-        secure: false, // Set to true if using HTTPS (use if deploying)
-        maxAge: 14 * 24 * 60 * 60 * 1000 // 14 days
+        secure: true,
+        maxAge: 14 * 24 * 60 * 60 * 1000 
     }
 }));
 
