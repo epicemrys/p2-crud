@@ -15,13 +15,13 @@ app.use(express.json());
 app.use(bodyParser.json())
 app.use(session({secret: "secret", resolve: false, resave: false, saveUninitialized: true, store: new express-session.MemoryStore()}));
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: '*',
+//     methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+//     credentials: true
+// }));
 
-app.use('/', require('./routes/index'));
+app.use('/', require('./routes/index.js'));
 
 app.use((req, res, next) => {
     res.setHeader('Access-control-Allow-Origin', '*');
