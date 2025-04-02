@@ -6,8 +6,8 @@ const doc = {
         titles: 'Match Maker Api',
         description: 'Connect and Match Api'
     },
-    host: 'p2-crud.onrender.com',
-    schemes: ['https', 'http']
+    host: 'localhost:9090',
+    schemes: ['http', 'https']
 };
 
 const outputFile = 'swagger.json';

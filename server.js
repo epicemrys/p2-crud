@@ -35,9 +35,9 @@ app.use(cors({
 app.use('/', require('./routes/index.js'));
 
 
-process.on('uncaughtException', (err, origin) => {
-    console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
-});
+// process.on('uncaughtException', (err, origin) => {
+//     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+// });
 
 
 passport.use(new GitHubStrategy({
