@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require("dotenv").config();
 const mongodb = require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
@@ -9,8 +10,7 @@ const cors = require('cors');
 const port = process.env.PORT || 9090;
 const app = express();
 
-
-app.use(express.json());
+//app.use(express.json());
 app.use(bodyParser.json())
 app.use(session({ secret: "secret", resolve: false, resave: false, saveUninitialized: true, store: new express - session.MemoryStore() }));
 
@@ -40,7 +40,6 @@ process.on('uncaughtException', (err, origin) => {
 });
 
 
-
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -59,6 +58,7 @@ passport.deserializeUser((user, done) => {
     done(null, user);
 });
 
+
 app.get('/', (req, res) => {
     let message = req.query.message;
     let loginMessage = req.session.user !== undefined
@@ -72,14 +72,19 @@ app.get('/', (req, res) => {
     `);
 });
 
-app.get('/github/callback', passport.authenticate('github', {
-    failureRedirect: 'api-docs',
-    session: false
-}),
-(req, res) => {
-    req.session.user = req.user;
-    res.redirect('/');
-});
+app.get('/github/callback', 
+    passport.authenticate('github', { failureRedirect: 'api-docs', session: false }), 
+    (req, res) => {
+        req.session.user = {
+            id: req.user.id, 
+            displayName: req.user.displayName || req.user.username || req.user.name
+        };
+        res.redirect('/');
+    }
+);
+
+
+
 
 mongodb.initDb((err) => {
     if (err) {
