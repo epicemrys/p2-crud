@@ -6,10 +6,10 @@
     "version": "1.0.0",
     "title": "REST API"
   },
-  "host": "p2-crud.onrender.com",
+  "host": "localhost:9090/api-docs/",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/login": {
