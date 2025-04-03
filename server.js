@@ -22,7 +22,7 @@ app.use(session({
     }),
     cookie: {
         secure: false,
-        maxAge: 14 * 24 * 60 * 60 * 1000 
+        maxAge: 14 * 24 * 60 * 60 * 1000
     }
 }));
 

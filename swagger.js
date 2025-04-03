@@ -3,8 +3,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        titles: 'Match Maker Api',
-        description: 'Connect and Match Api'
+        title: 'Match Maker Api',
+        description: 'Connect and Match Api',
     },
     host: 'localhost:9090',
     schemes: ['http', 'https']
