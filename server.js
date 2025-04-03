@@ -6,7 +6,7 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const GitHubStrategy = require('passport-github2').Strategy;
-const cors = require('cors');
+// const cors = require('cors');
 
 const port = process.env.PORT || 9090;
 const app = express();
@@ -39,10 +39,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
-}));
+// app.use(cors({
+//     origin: '*',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+// }));
 
 app.use('/', require('./routes/index.js'));
 
