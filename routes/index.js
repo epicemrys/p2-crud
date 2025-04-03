@@ -2,7 +2,7 @@ const router = require('express').Router();
 const passport = require('passport');
 const swaggerRouter = require('./swagger');
 
-router.use('/api-docs', swaggerRouter);
+router.use('/', swaggerRouter);
 
 router.use('/lovebox', require('./lovebox'));
 router.use('/connectbox', require('./connectbox'));
