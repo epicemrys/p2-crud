@@ -5,7 +5,7 @@
     "description": "Connect and Match Api",
     "version": "1.0.0"
   },
-  "host": "p2-crud.onrender.com/api-docs",
+  "host": "p2-crud.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
