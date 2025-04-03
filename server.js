@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const swaggerRouter = require('./routes/swagger');
 require('dotenv').config();
 const mongodb = require('./data/database');
 const passport = require('passport');
@@ -26,6 +27,8 @@ app.use(session({
     }
 }));
 
+app.use(express.json()); 
+app.use('/', swaggerRouter);
 
 app.use(passport.initialize())
 app.use(passport.session())
