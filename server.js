@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo');
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
-const port = process.env.PORT || 9090;
+const port = process.env.PORT || 9091;
 const app = express();
 
 app.use(bodyParser.json())

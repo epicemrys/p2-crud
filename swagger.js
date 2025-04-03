@@ -6,7 +6,7 @@ const doc = {
         title: 'Match Maker Api',
         description: 'Connect and Match Api',
     },
-    host: 'localhost:9090',
+    host: 'localhost:9091',
     schemes: ['http', 'https']
 };
 
