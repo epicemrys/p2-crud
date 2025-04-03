@@ -7,7 +7,7 @@ const doc = {
         description: 'Connect and Match Api'
     },
     host: 'localhost:9090',
-    schemes: ['http', 'https']
+    schemes: ['https', 'http']
 };
 
 const outputFile = 'swagger.json';

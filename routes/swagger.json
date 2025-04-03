@@ -5,10 +5,11 @@
     "description": "Connect and Match Api",
     "version": "1.0.0"
   },
-  "host": "p2-crud.onrender.com",
+  "host": "localhost:9090",
   "basePath": "/",
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/login": {
