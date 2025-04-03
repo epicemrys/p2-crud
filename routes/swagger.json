@@ -1,13 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "titles": "Match Maker Api",
+    "title": "Match Maker Api",
     "description": "Connect and Match Api",
-    "version": "1.0.0",
-    "title": "REST API"
+    "version": "1.0.0"
   },
   "host": "p2-crud.onrender.com",
-  "basePath": "/",
+  "basePath": "/api",
   "schemes": [
     "https"
   ],
