@@ -1,15 +1,15 @@
 ### Edit url with database name
 ### Get all lovebox / connectbox entries
-GET http://localhost:9090/lovebox
+GET http://localhost:9091/lovebox
 Accept: application/json
 
 
 ### Get a single lovebox / connectbox entry by ID
-GET http://localhost:9090/lovebox/67e5e50ed24c064e98201659
+GET http://localhost:9091/lovebox/67e5e50ed24c064e98201659
 Accept: application/json
 
 ### Create a new lovebox / connectbox entry
-POST http://localhost:9090/connectbox
+POST http://localhost:9091/connectbox
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### Update an existing lovebox / connectbox entry by ID
-PUT http://localhost:9090/lovebox/67e5e50ed24c064e98201659
+PUT http://localhost:9091/lovebox/67e5e50ed24c064e98201659
 Content-Type: application/json
 
 {
@@ -37,4 +37,4 @@ Content-Type: application/json
 }
 
 ### Delete a lovebox / connectbox entry by ID
-DELETE http://localhost:9090/connectbox/67e5e50ed24c064e98201659
+DELETE http://localhost:9091/connectbox/67e5e50ed24c064e98201659

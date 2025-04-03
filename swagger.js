@@ -6,7 +6,7 @@ const doc = {
         title: 'Match Maker Api',
         description: 'Connect and Match Api',
     },
-    host: 'p2-crud.onrender.com',
+    host: 'localhost:9091',
     schemes: ['https', 'http']
 };
 
