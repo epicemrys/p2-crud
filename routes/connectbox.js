@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { authenticate } = require('passport');
+//const { saveConnectbox } = require('../middleware/validate');
 const connectboxController = require('../controllers/connectbox');
 const validation = require('../middleware/validate');
 const { isAuthenticated } = require('../middleware/authenticate');

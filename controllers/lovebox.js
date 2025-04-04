@@ -19,16 +19,16 @@ const getSingle = async (req, res) => {
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid lovebox id to find a match.');
-          }
+        }
         const userId = new ObjectId(req.params.id);
         const result = await mongodb.getDatabase().db().collection('lovebox').find({ _id: userId });
-        
+
         const lovebox = await result.toArray();
-        
+
         if (lovebox.length === 0) {
             return res.status(404).json({ message: 'match not found.' });
         }
-        
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lovebox[0]);
     } catch (error) {
@@ -51,7 +51,7 @@ const createLovebox = async (req, res) => {
             favoriteColor: req.body.favoriteColor,
             birthdayMonth: req.body.birthdayMonth,
             age: req.body.age,
-            location: req.body.location
+            city: req.body.city
         };
 
         const existingLovebox = await mongodb.getDatabase().db().collection('lovebox').findOne({ email: lovebox.email });
@@ -88,7 +88,7 @@ const updateLovebox = async (req, res) => {
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid match id to update a lovebox.');
-          }
+        }
         const userId = new ObjectId(req.params.id);
         const lovebox = {
             firstName: req.body.firstName,
@@ -97,11 +97,10 @@ const updateLovebox = async (req, res) => {
             favoriteColor: req.body.favoriteColor,
             birthdayMonth: req.body.birthdayMonth,
             age: req.body.age,
-            location: req.body.location
+            city: req.body.city
         };
 
         const response = await mongodb.getDatabase().db().collection('lovebox').replaceOne({ _id: userId }, lovebox);
-        console.log(response);
 
         if (response.modifiedCount > 0) {
             return res.status(200).json({ message: 'Lovebox updated successfully.' });
@@ -124,7 +123,7 @@ const deleteLovebox = async (req, res) => {
     try {
         if (!ObjectId.isValid(req.params.id)) {
             res.status(400).json('Must use a valid lovebox id to delete a match.');
-          }
+        }
         const userId = new ObjectId(req.params.id);
         const response = await mongodb.getDatabase().db().collection('lovebox').deleteOne({ _id: userId });
 

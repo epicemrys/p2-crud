@@ -1,25 +1,26 @@
 ### Edit url with database name
 ### Get all lovebox / connectbox entries
+
 GET http://localhost:9090/lovebox
 Accept: application/json
 
 
 ### Get a single lovebox / connectbox entry by ID
-GET http://localhost:9090/lovebox/67e5e50ed24c064e98201659
+GET http://localhost:9090/lovebox/67e5e374d24c064e98201655
 Accept: application/json
 
 ### Create a new lovebox / connectbox entry
-POST http://localhost:9090/connectbox
+POST http://localhost:9090/lovebox
 Content-Type: application/json
 
 {
-    "firstName": "connessct",
-    "lastName": "bodsx",
-    "email": "testconsdfnect@byupatfhway.com",
-    "favoriteHobby": "Playindsfg Guitar",
-    "birthdayMonth": "Apri3l",
+    "firstName": "Obama",
+    "lastName": "Trump",
+    "email": "trubama@byupatfhway.com",
+    "favoriteHobby": "Politics",
+    "birthdayMonth": "July 4",
     "age": "330",
-    "city": "New fYork"
+    "city": "Washington DC"
 }
 
 ### Update an existing lovebox / connectbox entry by ID

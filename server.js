@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const swaggerRouter = require('./routes/swagger');
 require('dotenv').config();
 const mongodb = require('./data/database');
@@ -9,10 +9,10 @@ const MongoStore = require('connect-mongo');
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
-const port = process.env.PORT || 9090;
 const app = express();
+const port = process.env.PORT || 9090;
 
-app.use(bodyParser.json())
+//app.use(bodyParser.json())
 app.use(session({
     secret: process.env.SESSION_SECRET || "secret",
     resave: false,
